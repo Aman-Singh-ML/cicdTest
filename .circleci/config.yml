@@ -11,3 +11,12 @@ jobs:
      - run: docker build -t amansingh2708/sf-scheduler:circitest ./sf-scheduler-code
      # deploy the image
      - run: docker push amansingh2708/sf-scheduler:circitest
+ lint:
+   docker:
+     - image: golangci/golangci-lint:v1.37-alpine
+   steps:
+     - checkout
+     - run: golangci-lint run
+workflows:
+  - build
+  - lint  
