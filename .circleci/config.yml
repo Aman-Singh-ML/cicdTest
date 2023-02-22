@@ -6,9 +6,8 @@ jobs:
     image: ubuntu-2204:2022.04.2
    steps:
      - checkout
-     - run: docker login --username amansingh2708 --password Maplelabs5678$
+     - run: docker login --username amansingh2708 --password-stdin
      # build the application image 
      - run: docker build -t amansingh2708/sf-scheduler:circitest ./sf-scheduler-code
-
      # deploy the image
      - run: docker push amansingh2708/sf-scheduler:circitest
