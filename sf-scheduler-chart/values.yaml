@@ -1,0 +1,23 @@
+# Default values for sf-scheduler.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+global:
+  sfNodeManager:
+    enabled: false
+    priorityClassName: sf-critical-pod
+
+image:
+  repository: snappyflowml/sf-kubescheduler
+  pullPolicy: Always
+  tag: latest
+
+serviceAccount:
+  name: sf-scheduler
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 500Mi
