@@ -1,0 +1,13 @@
+version: 2.1
+
+jobs:
+ build:
+   machine:
+    image: ubuntu-2204:2022.04.2
+   steps:
+     - checkout
+     # build the application image 
+     - run: docker build -t amansing2708/sf-scheduler:circitest ./sf-scheduler-code
+
+     # deploy the image
+     - run: docker push amansing2708/sf-scheduler:circitest
