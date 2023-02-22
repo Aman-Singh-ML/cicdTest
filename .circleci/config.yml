@@ -18,5 +18,7 @@ jobs:
      - checkout
      - run: golangci-lint run
 workflows:
-  - build
-  - lint  
+  build_lint_test:
+    jobs:
+      - build
+      - lint
