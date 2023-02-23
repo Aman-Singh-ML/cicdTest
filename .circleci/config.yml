@@ -10,7 +10,7 @@ jobs:
      # build the application image 
      - run: docker build -t amansingh2708/sf-scheduler:circitest ./sf-scheduler-code
      # deploy the image
-     - run: docker push amansingh2708/sf-scheduler:circitest
+     - run: docker push amansingh2708/sf-scheduler:release
  lint:
    docker:
      - image: golangci/golangci-lint:v1.37-alpine
